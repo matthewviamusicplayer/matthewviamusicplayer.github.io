@@ -11,7 +11,7 @@ interface Album {
 }
 
 export async function getStaticPaths() {
-  const data: Album[] = await fetch(import.meta.env.API_OLK_ALBUMS).then(response => response.json());
+  const data: Album[] = await fetch("https://dev.olk1.com/albums").then(response => response.json());
 
   return data.map((album: Album) => {
     return {
